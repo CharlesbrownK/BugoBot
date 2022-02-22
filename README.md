@@ -25,9 +25,9 @@ When a meal is requested more than once, the meal is saved on the server by the 
 
 ## School Type
 
-  * Elementay School : 'elementary'
-  * Middle School : 'middle'
-  * High school : 'high'
+  * Elementay School : `elementary`
+  * Middle School : `middle`
+  * High school : `high`
 
 ## School Code
 
@@ -51,7 +51,7 @@ Fix `your_school_type` type and `your_school_code`!
 
  > This part is optional.
 
-`https://<span></span>schoolmenukr.<span></span>ml/api/your_school_type/your_school_code<strong>?[variable_name1]=[value1]&[variable_name2]=[value2]</strong>`
+<code>https://<span></span>schoolmenukr.<span></span>ml/api/your_school_type/your_school_code<strong>?[variable_name1]=[value1]&[variable_name2]=[value2]</strong></code>
 
 | Variable Name | Explanation | Initial Value |
 | :------: | ------ | ------ |
