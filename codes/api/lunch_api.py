@@ -31,7 +31,6 @@ class BugoLunchMenu:
         else:
             today_month = '&month=' + today[5:7]
 
-
         # tomorrow information
         tomorrow = str(datetime.date.today() + datetime.timedelta(days=1))
         if (tomorrow[6] == '0'):
