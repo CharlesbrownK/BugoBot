@@ -4,4 +4,4 @@
   </a>
 </p>
 
-<h1 align="center"> Bugobot </h1>
+<h1 align="center"> BugoBot </h1>
