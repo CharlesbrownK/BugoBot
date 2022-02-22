@@ -1,0 +1,49 @@
+{
+    "name": "school-menu-api",
+    "version": "3.3.1",
+    "description": "초·중·고등학교 식단 쉽게 불러오기",
+    "repository": "https://github.com/5d-jh/school-menu-api",
+    "main": "package-function/dist/src/index.js",
+    "author": "5d-jh",
+    "license": "MIT",
+    "scripts": {
+        "build": "npm run build --workspaces",
+        "emulator": "npm run build && firebase emulators:start --only database,functions",
+        "emulator-firestore": "firebase emulators:start --only firestore",
+        "setup-emulator-firestore": "firebase setup:emulators:firestore",
+        "serve": "firebase serve --only functions",
+        "shell": "npm run build && firebase functions:shell",
+        "start": "npm run shell",
+        "deploy": "firebase deploy --only functions",
+        "logs": "firebase functions:log",
+        "local": "ts-node package-function/src/index.ts",
+        "lint": "exit 0"
+    },
+    "engines": {
+        "node": "16",
+        "npm": ">=7"
+    },
+    "private": true,
+    "workspaces": [
+        "package-common",
+        "package-school-menu",
+        "package-school-info",
+        "package-function"
+    ],
+    "dependencies": {
+        "firebase-admin": "^10.0.1",
+        "firebase-functions": "^3.16.0"
+    },
+    "devDependencies": {
+        "@types/node": "^14.14.31",
+        "@typescript-eslint/eslint-plugin": "^5.7.0",
+        "@typescript-eslint/parser": "^5.7.0",
+        "eslint": "^7.32.0",
+        "eslint-config-standard": "^16.0.3",
+        "eslint-plugin-import": "^2.25.3",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-promise": "^5.2.0",
+        "@firebase/testing": "^0.20.11",
+        "firebase-tools": "^10.0.1"
+    }
+}
