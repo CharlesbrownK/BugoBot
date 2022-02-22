@@ -6,21 +6,30 @@
 
 <h1 align="center"> BugoBot </h1>
 
+The BugoBot, Discord bot, is developed for all students of Bucheon High School. But if you change some dummy codes, you can create your own service!
 
-## Overview and Features
+- [Food Menu API](#food-menu-api)
+  - [School Type](#school-type)
+  - [School Code](#school-code)
+  - [Import Meal Menu](#import-meal-menu)
+  - [Parameter](#parameter)
+  - [Example](#example)
+  - [Result](#result)
+- [License](#license)
+
 ## Food Menu API
 
 You can get a school food menu as [JSON](https://opentutorials.org/course/1375/6844) via an [HTTP GET request](https://opentutorials.org/course/3385/21674). So data can be called from any platform.
 
 When a meal is requested more than once, the meal is saved on the server by the requested school, year, and month, greatly improving response speed. Also support elementary, middle, and high schools in Korea.
 
-### School Type
+## School Type
 
-  * Elementay School : 'elementary'
-  * Middle School : 'middle'
-  * High school : 'high'
+  * Elementay School : `elementary`
+  * Middle School : `middle`
+  * High school : `high`
 
-### School Code
+## School Code
 
 You can get your school code [here](https://schoolmenukr.ml/code/app)!
 
@@ -32,13 +41,17 @@ self.today_url = 'https://schoolmenukr.ml/api/your_school_type/your_school_code?
 self.tomorrow_url = 'https://schoolmenukr.ml/api/your_school_type/your_school_code?year=2022&allergy=hidden' + tomorrow_month + tomorrow_date
 ```
 
-### Import meal menu
+Fix `your_school_type` type and `your_school_code`!
+
+## Import Meal Menu
 
 `https://schoolmenukr.ml/api/your_school_type/your_school_code` is the main address. And you can add more condition of address.
 
-#### Parameter(options)
+### Parameter
 
-`https://<span></span>schoolmenukr.<span></span>ml/api/your_school_type/your_school_code<strong>?[variable_name1]=[value1]&[variable_name2]=[value2]</strong>`
+ > This part is optional.
+
+<code>https://<span></span>schoolmenukr.<span></span>ml/api/your_school_type/your_school_code<strong>?[variable_name1]=[value1]&[variable_name2]=[value2]</strong></code>
 
 | Variable Name | Explanation | Initial Value |
 | :------: | ------ | ------ |
@@ -47,7 +60,7 @@ self.tomorrow_url = 'https://schoolmenukr.ml/api/your_school_type/your_school_co
 | date | By specifying a specific day, the menu for that day is called up. | Day of current date |
 | allergy | When set to 'hidden', allergy information is not displayed, and when set to 'formed', information is displayed structured. | None |
 
-#### Example
+### Example
 
 > Python
 ```python
@@ -60,7 +73,7 @@ school_menu = json.loads(response.text)
 print(school_menu)
 ```
 
-##### Result
+### Result
 ```
 {
     menu: [
@@ -77,3 +90,8 @@ print(school_menu)
 }
 ```
 
+## License
+
+© 2021, Hey-bugo. Released under [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.html).
+
+**BugoBot** is authored and maintained by [@CharlesbrownK](https://github.com/CharlesbrownK).
