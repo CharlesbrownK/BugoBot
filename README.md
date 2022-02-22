@@ -94,4 +94,4 @@ print(school_menu)
 
 © 2021, Hey-bugo. Released under [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.html).
 
-**Hey-bugo** is authored and maintained by [@CharlesbrownK](https://github.com/CharlesbrownK).
+**BugoBot** is authored and maintained by [@CharlesbrownK](https://github.com/CharlesbrownK).
