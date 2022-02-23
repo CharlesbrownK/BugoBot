@@ -66,4 +66,4 @@ async def 내일급식(ctx):
 # async def 내일시간표(ctx):
     
 
-bot.run('OTQ1NjI2MTg1Mjc3MjQ3NTA4.YhS5Aw.hN5bZCbjb6wAdCaOChLhQRezNQI')
+bot.run('your_secret_token')
