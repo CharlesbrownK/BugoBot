@@ -22,7 +22,7 @@ from discord.ext import commands
 
 prefix = '?'
 blm = lunch_api.BugoLunchMenu()
-bot = commands.Bot(command_prefix = prefix, help_command = None)
+bot = commands.Bot(command_prefix = prefix)
 tomorrow_lunch = blm.tm_lunch()
 today_lunch = blm.td_lunch()
 
@@ -35,15 +35,19 @@ async def on_ready():
     await bot.change_presence(status=discord.Status.online, activity=discord.Game('BugoBot 일'))
 
 @bot.command()
-async def 오늘급식(ctx):
+async def 급식(ctx):
     if (len(today_lunch) == 0):
         await ctx.send('''```\n오늘은 급식이 없습니다.[또는 데이터를 불러오지 못했습니다]\n```''')
     else:
-        m = 1
+        m = len(today_lunch)
+        i = 0
+        cnt = 1
         menu_message = "```"
-        for i in today_lunch[i]:
-            menu_message += m + ". " + i + "\n"
-            m += 1
+        while (m >= 0):
+            menu_message += cnt + ". " + today_lunch[i] + "\n"
+            cnt += 1
+            i += 1
+            m -= 1
         menu_message += '```'
         await ctx.send(menu_message)
 
@@ -52,14 +56,18 @@ async def 내일급식(ctx):
     if (len(tomorrow_lunch) == 0):
         await ctx.send('''```\n내일은 급식이 없습니다.[또는 데이터를 불러오지 못했습니다]\n```''')
     else:
-        m = 1
+        m = len(tomorrow_lunch)
+        i = 0
+        cnt = 1
         menu_message = "```"
-        for i in tomorrow_lunch[i]:
-            menu_message += m + ". " + i + "\n"
-            m += 1
+        while (m >= 0):
+            menu_message += cnt + ". " + tomorrow_lunch[i] + "\n"
+            cnt += 1
+            i += 1
+            m -= 1
         menu_message += '```'
         await ctx.send(menu_message)
-
+        
 @bot.command(name="시간표")
 async def time_table(ctx):
     timeout = 7
