@@ -13,8 +13,10 @@
 #   You should have received a copy of the GNU General Public License
 #   along with this program. If not, see <http://www.gnu.org/licenses/>
 
+import time
 import discord
 import asyncio
+from socket import timeout
 from codes.api import lunch_api
 from discord.ext import commands
 
@@ -57,6 +59,31 @@ async def 내일급식(ctx):
             m += 1
         menu_message += '```'
         await ctx.send(menu_message)
+
+@bot.command(name="시간표")
+async def time_table(ctx):
+    timeout = 7
+    await ctx.send("""```시간표를 확인하기 전에 사용자의 반 정보를 알아야 합니다!\n\n몇 반인지 알려주세요!\n   ex) 2-4 [⚠️ 해당 형식을 꼭 지켜주세요]\n```""")
+    time.sleep(0.5)
+    send_message = await ctx.send(f'{timeout}초간 기다립니다!')
+
+    def check(m):
+        return m.author == ctx.message.author and m.channel == ctx.message.channel
+
+    try:
+        msg = await bot.wait_for('message', check=check, timeout=timeout)
+    except asyncio.TimeoutError:
+        await ctx.send("""```\n시간이 초과되었네요!\n다시 명령어를 입력해주세요!\n```""")
+    else:
+        users_class = str(msg.content)
+        global user_class
+        user_class = users_class[2:]
+        
+        global user_grade
+        user_grade = users_class[0]
+    
+    await ctx.send(f"오늘 {user_grade}학년 {user_class}반 시간표 입니다.")
+    await ctx.send("""```\n1. \n2. \n3. \n4. \n```""")
 
 # @bot.command()
 # async def 오늘시간표(ctx):
