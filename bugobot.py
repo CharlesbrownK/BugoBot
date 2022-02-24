@@ -82,8 +82,8 @@ async def time_table(ctx):
         global user_grade
         user_grade = users_class[0]
     
-    await ctx.send(f"오늘 {user_grade}학년 {user_class}반 시간표 입니다.")
-    await ctx.send("""```\n1. \n2. \n3. \n4. \n```""")
+        await ctx.send(f"오늘 {user_grade}학년 {user_class}반 시간표 입니다.")
+        await ctx.send("""```\n1. \n2. \n3. \n4. \n```""")
 
 # @bot.command()
 # async def 오늘시간표(ctx):
