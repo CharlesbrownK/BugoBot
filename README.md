@@ -92,6 +92,6 @@ print(school_menu)
 
 ## License
 
-© 2021, Hey-bugo. Released under [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.html).
+© 2022, BugoBot. Released under [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.html).
 
 **BugoBot** is authored and maintained by [@CharlesbrownK](https://github.com/CharlesbrownK).
